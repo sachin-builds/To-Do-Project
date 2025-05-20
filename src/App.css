@@ -1,0 +1,31 @@
+/* *{
+    background-color: purple;
+} */
+
+#nav{
+    background-color: purple;
+}
+
+#box{
+    background-color: rgb(55, 6, 70);
+}
+
+#bground{
+    background-color: purple;
+}
+
+.text{
+    color: #ffff;
+}
+
+#text{
+    color: #ffff;
+}
+
+#nav-text{
+    color: #ffff;
+}
+
+.input-box{
+    background-color: rgb(55, 6, 70);
+}
