@@ -23,16 +23,20 @@ function App() {
     //   })
     // })
   }
-
-  function addItem(){
-    let obj={
-      id: list.length > 0 ? list[list.length - 1].id + 1 : 1,
-      title:inputItem,
-      done:false
-    }
-    setList((prev) => [...prev,obj]);
-    setInputItem(() => "");
+function addItem(){
+  if(inputItem.trim() === ""){
+    alert("Please enter a valid item.");
+    return;
   }
+  let obj={
+    id: list.length > 0 ? list[list.length - 1].id + 1 : 1,
+    title:inputItem,
+    done:false
+  }
+  setList((prev) => [...prev,obj]);
+  setInputItem("");
+}
+
 
   function deleteItem(id) {
   setList((prev) => prev.filter((item) => item.id !== id));
@@ -63,7 +67,11 @@ function App() {
               <ul className="list-group">
                 {
                   list?.map((listitem,k) => {
-                    if(listitem.done===false){
+                    if(listitem.title===''){
+                      
+                   return null
+                    }
+                   else if(listitem.done===false){
                       return(
                         <li key={k} id='bground' className="list-group-item d-flex justify-content-between align-items-center">
                           <p id="text" className='mb-0'>{listitem.id}. {listitem.title}</p>
